@@ -19,10 +19,7 @@ public class CharacterController : MonoBehaviour
     private Vector2 _screenBottomLeft;
     private Vector2 _screenTopRight;
 
-    private Vector2 _currentPosition;
     private Vector2 _direction;
-
-    private float _distance;
 
     private void Awake()
     {
@@ -52,43 +49,34 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public bool IsMouseInsideCollider()
+    private bool IsMouseInsideCollider()
     {
         return _boxCollider.OverlapPoint(_mousePosition);
     }
 
-    public bool IsMouseOnScreen()
+    private bool IsMouseOnScreen()
     {
         return _mousePosition.x >= _screenBottomLeft.x && _mousePosition.x <= _screenTopRight.x &&
                _mousePosition.y >= _screenBottomLeft.y && _mousePosition.y <= _screenTopRight.y;
     }
 
-    public void MoveCharacterTowardsMouse()
-    {
-        _currentPosition = transform.position;
-        _direction = (_mousePosition - _currentPosition).normalized;
-
-        transform.position += (Vector3)_direction * GetMooveSpeed() * Time.deltaTime;
-        FlipSprite(_mousePosition.x < _currentPosition.x);
-    }
-
-    public void FlipSprite(bool flip)
+    private void FlipSprite(bool flip)
     {
         _spriteRenderer.flipX = flip;
     }
 
-    public float GetMooveSpeed()
+    private float GetMooveSpeed()
     {
         return GetDistance() ? _fRunSpeed : _fWalkSpeed;
     }
 
-    public void SetMoving(bool state)
+    private void SetMoving(bool state)
     {
         _animator.SetBool("isMove", state);
         _animator.SetBool("isFar", GetDistance());
     }
 
-    public bool GetDistance()
+    private bool GetDistance()
     {
         return Vector2.Distance(_mousePosition, new Vector2(transform.position.x, transform.position.y)) > _fDistance4Run;
     }

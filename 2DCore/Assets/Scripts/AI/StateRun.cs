@@ -6,9 +6,6 @@ public class StateRun : StateMachineBehaviour
 {
     private CharacterController _characterController;
 
-    private Vector3 _mousePosition;
-    private Vector3 _direction;
-
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _characterController = animator.GetComponent<CharacterController>();
