@@ -1,6 +1,16 @@
 2DCore/Library/
 2DCore/.vs/
-2DCore/.Logs/
+2DCore/Logs/
 2DCore/obj/
 2DCore/Temp/
 2DCore/UserSettings/
+2DCore/.vsconfig
+
+
+3DCore/Library/
+3DCore/.vs/
+3DCore/Logs/
+3DCore/obj/
+3DCore/Temp/
+3DCore/UserSettings/
+3DCore/.vsconfig
