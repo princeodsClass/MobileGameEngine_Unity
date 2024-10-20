@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ComType.cs" />
     <Compile Include="Assets\Scripts\Controllers\CharacterController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\MouseyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
