@@ -28,16 +28,7 @@ public class MenuManager : SingletonMono<MenuManager>
 
     public ESceneType CurScene { get; set; }
 
-    public bool IsMapFirstMessage = false;
-	public bool IsMoveToInventory { get; set; } = false;
-
-	public bool IsMoveToAbyss { get; set; } = false;
-	public bool IsMoveToMissionDefence { get; set; } = false;
-
-	public bool IsClearMissionAdventure { get; set; } = false;
-	public bool IsMoveToMissionAdventure { get; set; } = false;
-
-    private void Awake()
+     private void Awake()
     {
         if (null == _ResMgr) _ResMgr = GameResourceManager.Singleton;
 

@@ -1098,8 +1098,8 @@ MonoBehaviour:
   _txtTitle: {fileID: 4490185491511673898}
   _txtTopMessage: {fileID: 217978291975456166}
   _txtMessage: {fileID: 5509368729813741193}
-  _txtPositive: {fileID: 792187839340034946}
-  _txtNegative: {fileID: 740808895491293084}
+  _txtPositive: {fileID: 740808895491293084}
+  _txtNegative: {fileID: 792187839340034946}
   _tOutline: {fileID: 7717258812192160154}
   _resize: []
 --- !u!224 &4490185492516068416 stripped
