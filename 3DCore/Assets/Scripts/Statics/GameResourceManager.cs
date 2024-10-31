@@ -30,6 +30,8 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 
 	private void Awake()
 	{
+		// 모든 EResourceType 별 프리팹 캐시 리스트 생성 및 초기화.
+
 		if (0 == _listCachedPrefabs.Count)
 		{
 			for (int i = 0; i < (int)EResourceType.End; ++i)
@@ -52,6 +54,8 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 
 	public void Clear()
 	{
+		// 강제 초기화
+
 		Dictionary<string, Queue<GameObject>>.Enumerator it = _dicObjectPool.GetEnumerator();
 		while (it.MoveNext())
 			it.Current.Value.Clear();
@@ -295,7 +299,7 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 	}
 
     /// <summary>
-    /// 오브젝트 생성 후 생성 오브젝트 반환
+    /// 지정된 시간 후 오브젝트 소멸 처리.
     /// </summary>
     /// <param name="go"></param>
     /// <param name="fLifeTime"></param>
@@ -347,12 +351,12 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 		}
 	}
 
-	/// <summary>
-	/// 스프라이트 아틀라스를 로드하고 반환하는 메서드.
-	/// </summary>
-	/// <param name="eAtlas"></param>
-	/// <returns></returns>
-	private SpriteAtlas GetAtlas(EAtlasType eAtlas)
+    /// <summary>
+    /// 스프라이트 아틀라스를 로드하고 반환하는 메서드.
+    /// </summary>
+    /// <param name="eAtlas"></param>
+    /// <returns>SpriteAtlas</returns>
+    private SpriteAtlas GetAtlas(EAtlasType eAtlas)
 	{
 		int nKey = (int)eAtlas;
 		if (_dicAtlas.ContainsKey(nKey))
@@ -371,7 +375,7 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 	/// </summary>
 	/// <param name="eAtlas"></param>
 	/// <param name="strSpriteName"></param>
-	/// <returns></returns>
+	/// <returns>Sprite</returns>
 	public Sprite LoadSprite(EAtlasType eAtlas, string strSpriteName)
 	{
 		if (_dicCachedSprite.ContainsKey(strSpriteName))
@@ -387,12 +391,12 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 		return null;
 	}
 
-	/// <summary>
-	/// 텍스쳐 로드 후 반환하는 메서드.
-	/// </summary>
-	/// <param name="strTextureName"></param>
-	/// <returns></returns>
-	public Texture LoadTexture(string strTextureName)
+    /// <summary>
+    /// 텍스쳐 로드 후 반환하는 메서드.
+    /// </summary>
+    /// <param name="strTextureName"></param>
+    /// <returns>Texture</returns>
+    public Texture LoadTexture(string strTextureName)
 	{
 		if (_dicCachedObject.ContainsKey(strTextureName))
 			return _dicCachedObject[strTextureName] as Texture;
@@ -406,12 +410,12 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 		return null;
 	}
 
-	/// <summary>
-	/// 머터리얼 로드 후 반환하는 메서드.
-	/// </summary>
-	/// <param name="strMaterialName"></param>
-	/// <returns></returns>
-	public Material LoadMaterial(string strMaterialName)
+    /// <summary>
+    /// 머터리얼 로드 후 반환하는 메서드.
+    /// </summary>
+    /// <param name="strMaterialName"></param>
+    /// <returns>Material</returns>
+    public Material LoadMaterial(string strMaterialName)
 	{
 		if (_dicCachedObject.ContainsKey(strMaterialName))
 			return _dicCachedObject[strMaterialName] as Material;
