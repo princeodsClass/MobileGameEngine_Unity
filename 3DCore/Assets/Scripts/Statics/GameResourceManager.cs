@@ -428,4 +428,18 @@ public partial class GameResourceManager : SingletonMono<GameResourceManager>
 		}
 		return null;
 	}
+
+    public AudioClip LoadAudioClip(string strAudioName)
+    {
+        if (_dicCachedObject.ContainsKey(strAudioName))
+            return _dicCachedObject[strAudioName] as AudioClip;
+
+        Object obj = Load<Object>($"{ComType.AUDIO_PATH}{strAudioName}");
+        if (null != obj)
+        {
+            _dicCachedObject.Add(strAudioName, obj);
+            return obj as AudioClip;
+        }
+        return null;
+    }
 }

@@ -101,7 +101,7 @@ public class MenuManager : SingletonMono<MenuManager>
         if (!IsLoadingComplete) return;
 
         IsLoadingComplete = false;
-        // GameAudioManager.ChangeAudioMixSnapShot(eScene.ToString());
+        GameAudioManager.ChangeAudioMixSnapShot(eScene.ToString());
         // 기타 신 변경 대응해야 할 것들 처리.
 
         SceneManager.LoadScene(eScene.ToString());

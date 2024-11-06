@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Utilities\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\UI\UIRootTest.cs" />
     <Compile Include="Assets\Scripts\Controllers\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\Statics\GameAudioManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Controllers\MouseyController.cs" />
     <Compile Include="Assets\Scripts\UI\UIDialog.cs" />

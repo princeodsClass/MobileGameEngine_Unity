@@ -19,6 +19,21 @@ public static class ComType
     public const string UI_PATH_ETC = "Prefabs/UI/ETCComponent/";
 
     public const string ATLAS_PATH = "SpriteAtlas/";
-    public const string TEXTURE_PATH = "Textures/";
+    public const string AUDIO_PATH = "Audios/";
     public const string MATERIAL_PATH = "Materials/";
+    public const string TEXTURE_PATH = "Textures/";
+
+    public static string[] AudioMixPaths = new string[]
+    {
+        "Master/SFX/ETC",
+        "Master/SFX/UI",
+        "Master/SFX/Notice",
+        "Master/SFX/Voice",
+        "Master/SFX/Battle",
+        "Master/Music/BGM",
+    };
+
+    public static readonly string BGM_MIX = "Master/Music/BGM";
+    public static readonly string UI_MIX = "Master/SFX/UI";
+    public static readonly string BATTLE_MIX = "Master/SFX/Battle";
 }
