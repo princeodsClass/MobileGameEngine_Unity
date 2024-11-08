@@ -62,7 +62,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 
 		_dicAudioMixGroup.Clear();
 		if (_audioMix == null)
-			_audioMix = Resources.Load<AudioMixer>("audios/AudioMixer");
+			_audioMix = Resources.Load<AudioMixer>("Audios/AudioMixer");
 
 		_audioMix.FindMatchingGroups("Master");
 		_dicAudioMixGroup.Add("Master", _audioMix.FindMatchingGroups("Master")[0]);
@@ -84,7 +84,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 	/// 신 이름에 맞도록.
 	/// </summary>
 	/// <param name="scene"></param>
-	public static void ChangeAudioMixSnapShot(string scene)
+	public void ChangeAudioMixSnapShot(string scene)
 	{
 		AudioMixerSnapshot snapShot = _audioMix.FindSnapshot(scene);
 
@@ -101,7 +101,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 	/// 풀링 처리를 위한 메서드
 	/// </summary>
 	/// <returns>audiosource</returns>
-	private static AudioSource GetSFXReadyAudioSource()
+	private AudioSource GetSFXReadyAudioSource()
 	{
 		for (int i = 0; i < _sfxPlayAudioSources.Count; i++)
 		{
@@ -140,7 +140,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 	/// <param name="mixerGroup"></param>
 	/// <param name="loop"></param>
 	/// <param name="pitch"></param>
-	private static void PlaySFX(AudioClip audioClip, string mixerGroup = "Master/SFX", bool loop = false, float pitch = 1.0f)
+	private void PlaySFX(AudioClip audioClip, string mixerGroup = "Master/SFX", bool loop = false, float pitch = 1.0f)
 	{
 		if (null == Singleton) return;
 
@@ -171,7 +171,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 	/// <param name="maxDistance"></param>
 	/// <param name="mixerGroup"></param>
 	/// <param name="loop"></param>
-	private static void _PlaySFX3D(AudioClip audioClip, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixerGroup = "Master/SFX/Battle", bool loop = false)
+	private void _PlaySFX3D(AudioClip audioClip, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixerGroup = "Master/SFX/Battle", bool loop = false)
 	{
 		if (null == Singleton) return;
 
@@ -196,14 +196,29 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
         selectAudio.Play();
 	}
 
-	private static IEnumerator _PlaySFXRoutine(AudioClip audioClip, float delay, bool bLoop, string mixerGroup, float pitch = 1.0f)
+	/// <summary>
+	/// sfx 지연 재생 메서드
+	/// </summary>
+	/// <param name="audioClip"></param>
+	/// <param name="delay"></param>
+	/// <param name="bLoop"></param>
+	/// <param name="mixerGroup"></param>
+	/// <param name="pitch"></param>
+	/// <returns></returns>
+	private IEnumerator _PlaySFXRoutine(AudioClip audioClip, float delay, bool bLoop, string mixerGroup, float pitch = 1.0f)
 	{
 		yield return new WaitForSeconds(delay);
 
 		PlaySFX(audioClip, mixerGroup, bLoop, pitch);
 	}
 
-	private static IEnumerator _PlayBGMRoutine(AudioClip audioClip, bool bLoop)
+	/// <summary>
+	/// bgm 지연 재생 메서드.
+	/// </summary>
+	/// <param name="audioClip"></param>
+	/// <param name="bLoop"></param>
+	/// <returns></returns>
+	private IEnumerator _PlayBGMRoutine(AudioClip audioClip, bool bLoop)
 	{
 		WaitForEndOfFrame frame = new WaitForEndOfFrame();
 
@@ -234,7 +249,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	private static void _PlayBGMInstantly(AudioClip audioClip, bool bLoop)
+	private void _PlayBGMInstantly(AudioClip audioClip, bool bLoop)
 	{
 		if (null != audioClip)
 		{
@@ -246,7 +261,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static void PlaySFX(AudioClip audioClip, float delay = 0f, string mixerGroup = "Master/SFX/Battle", bool loop = false, float pitch = 1.0f)
+	public void PlaySFX(AudioClip audioClip, float delay = 0f, string mixerGroup = "Master/SFX/Battle", bool loop = false, float pitch = 1.0f)
 	{
 		if (null == audioClip) return;
 
@@ -260,21 +275,21 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static void PlaySFX3D(AudioClip audioClip, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixerGroup = "Master/SFX/Battle", bool loop = false)
+	public void PlaySFX3D(AudioClip audioClip, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixerGroup = "Master/SFX/Battle", bool loop = false)
 	{
 		if (null == audioClip) return;
 
 		_PlaySFX3D(audioClip, vec, minDistance, maxDistance, mixerGroup, loop);
 	}
 
-	public static void PlayBGM(AudioClip audioClip, bool bLoop = true)
+	public void PlayBGM(AudioClip audioClip, bool bLoop = true)
 	{
 		if (null == audioClip) return;
 
 		_PlayBGMInstantly(audioClip, bLoop);
 	}
 
-	public static void PlaySFX(string audioName, float delay = 0f, bool loop = false, string mixKey = "Master/SFX/Battle", float pitch = 1.0f)
+	public void PlaySFX(string audioName, float delay = 0f, bool loop = false, string mixKey = "Master/SFX/Battle", float pitch = 1.0f)
 	{
 		if (false == string.IsNullOrEmpty(audioName))
 		{
@@ -288,7 +303,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static void PlaySFX3D(string audioName, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixKey = "Master/SFX/Battle", bool loop = false)
+	public void PlaySFX3D(string audioName, Vector3 vec, float minDistance = 1, float maxDistance = 30, string mixKey = "Master/SFX/Battle", bool loop = false)
 	{
 		if (false == string.IsNullOrEmpty(audioName))
 		{
@@ -303,7 +318,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static bool IsPlaySFX(string audioName)
+	public bool IsPlaySFX(string audioName)
 	{
 		for (int i = 0; i < _sfxPlayAudioSources.Count; i++)
 		{
@@ -319,7 +334,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		return false;
 	}
 
-	public static void StopSFX(string audioName)
+	public void StopSFX(string audioName)
 	{
 		for (int i = 0; i < _sfxPlayAudioSources.Count; i++)
 		{
@@ -328,7 +343,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static void StopSFXAll()
+	public void StopSFXAll()
 	{
 		for (int i = 0; i < _sfxPlayAudioSources.Count; ++i)
 		{
@@ -337,7 +352,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-    public static void PlayBGM(string audioName)
+    public void PlayBGM(string audioName)
 	{
 		if (false == string.IsNullOrEmpty(audioName))
 		{
@@ -361,7 +376,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	private static IEnumerator ChangeBGMRoutine(string audioName)
+	private IEnumerator ChangeBGMRoutine(string audioName)
 	{
 		WaitForEndOfFrame frame = new WaitForEndOfFrame();
 		float fTime = 1f;
@@ -403,7 +418,7 @@ public class GameAudioManager : SingletonMono<GameAudioManager>
 		}
 	}
 
-	public static void StopBGM(bool bInstantStop = true)
+	public void StopBGM(bool bInstantStop = true)
 	{
 		if (bInstantStop == false)
 		{

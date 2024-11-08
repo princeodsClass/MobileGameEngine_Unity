@@ -8,6 +8,9 @@ public class MouseyController : MonoBehaviour
     [SerializeField]
     Slider _slider;
 
+    [SerializeField]
+    AudioClip[] _acRun;
+
     Animator _animator;
 
     private void Start()
@@ -24,22 +27,27 @@ public class MouseyController : MonoBehaviour
             _animator.SetTrigger("Dance");
         }
 
-        /*
-        if ( Input.GetKey(KeyCode.W) )
-        {
-            _animator.SetBool("isRun", true);
-        }
-        else
-        {
-            _animator.SetBool("isRun", false);
-        }
-        */
-
         _animator.SetBool("isRun", Input.GetKey(KeyCode.W));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _animator.SetTrigger("Punch");
         }
+    }
+
+    public void FootStep()
+    {
+        if ( _slider.value < 0.5f )
+            return;
+
+        GameAudioManager.Singleton.PlaySFX3D(_acRun[Random.Range(0, _acRun.Length)], transform.position);
+    }
+
+    public void FootStepInjured()
+    {
+        if (_slider.value >= 0.5f)
+            return;
+
+        GameAudioManager.Singleton.PlaySFX3D(_acRun[Random.Range(0, _acRun.Length)], transform.position);
     }
 }

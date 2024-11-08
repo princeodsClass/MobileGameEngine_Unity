@@ -14,6 +14,7 @@ public abstract class UIDialog : MonoBehaviour
 	protected MenuManager _MenuMgr = null;
 	protected GameManager _GameMgr = null;
 	protected GameResourceManager _ResourceMgr = null;
+	protected GameAudioManager _AudioMgr = null;
 
 	protected Dictionary<string, string> m_LogDataDict = new Dictionary<string, string>();
 	public bool IsActivate { get { return (m_bActive && m_CachedObject.activeSelf) ? true : false; } }
@@ -38,6 +39,7 @@ public abstract class UIDialog : MonoBehaviour
 		if (null == _MenuMgr) _MenuMgr = MenuManager.Singleton;
 		if (null == _GameMgr) _GameMgr = GameManager.Singleton;
         if (null == _ResourceMgr) _ResourceMgr = GameResourceManager.Singleton;
+		if (null == _AudioMgr) _AudioMgr = GameAudioManager.Singleton;
     }
 
 	public virtual void Open()

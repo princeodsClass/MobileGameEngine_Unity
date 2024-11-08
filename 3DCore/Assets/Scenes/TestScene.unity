@@ -401,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.999939, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &717181749
@@ -876,10 +876,10 @@ RectTransform:
   - {fileID: 2124337621}
   m_Father: {fileID: 1135587435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 197}
-  m_SizeDelta: {x: 160, y: 17.1014}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 506.86755, y: -88.309204}
+  m_SizeDelta: {x: 890.1555, y: 23.7079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426875099
 MonoBehaviour:
@@ -1138,6 +1138,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1426875099}
+  _acRun:
+  - {fileID: 8300000, guid: 5468cba88d0bd3647bb3835b2dfcb284, type: 3}
+  - {fileID: 8300000, guid: d46174eb24636e44e9cda84caf8336d0, type: 3}
+  - {fileID: 8300000, guid: b347e5de4988a744ca6ea81ec8254f70, type: 3}
+  - {fileID: 8300000, guid: 2a1e32b6071645b4fb468dc2bf8c052f, type: 3}
+  - {fileID: 8300000, guid: 55d0d60c5acaf4f45af50b0f19306dfe, type: 3}
 --- !u!1 &2124337620
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class MenuManager : SingletonMono<MenuManager>
     private Transform _tRootPopup = null;
 
     private GameResourceManager _ResMgr = null;
+    private GameAudioManager _AudioMgr = null;
     private UIRootBase _UIRoot = null;
 
     private EUIPage _eCurPage = EUIPage.End;
@@ -31,6 +32,7 @@ public class MenuManager : SingletonMono<MenuManager>
      private void Awake()
     {
         if (null == _ResMgr) _ResMgr = GameResourceManager.Singleton;
+        if (null == _AudioMgr) _AudioMgr = GameAudioManager.Singleton;
 
         CurScene = ESceneType.MemuScene;
         IsLoadingComplete = true;
@@ -101,7 +103,7 @@ public class MenuManager : SingletonMono<MenuManager>
         if (!IsLoadingComplete) return;
 
         IsLoadingComplete = false;
-        GameAudioManager.ChangeAudioMixSnapShot(eScene.ToString());
+        _AudioMgr.ChangeAudioMixSnapShot(eScene.ToString());
         // 기타 신 변경 대응해야 할 것들 처리.
 
         SceneManager.LoadScene(eScene.ToString());
