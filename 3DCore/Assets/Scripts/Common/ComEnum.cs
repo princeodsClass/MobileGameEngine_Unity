@@ -135,3 +135,26 @@ public enum EUIComponent
 	End
 }
 
+public enum EPostAPI
+{
+	create_account,
+	create_item,
+}
+
+public enum EGetAPI
+{
+    get_account_info,
+    get_inventory_info,
+}
+
+public enum EPutAPI
+{
+    update_account_info,
+	update_item_info,
+}
+
+public enum EDeleteAPI
+{
+    delete_account,
+	delete_item,
+}

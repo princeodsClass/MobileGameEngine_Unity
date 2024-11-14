@@ -52,6 +52,7 @@ SpriteAtlas:
     packedSpriteRenderDataKeys:
     - 32fe2b500f0c01646b6ca11e7892f649: 21300000
     - 66331ae0a0dfe6740970b561a2456843: 21300000
+    - c8da7ca2516b1bd4fb76478600ef7a6c: 21300000
     - 5adbf4047b9c3fc4f8651eebe8d38a37: 21300000
     - 1a4ce1552a1f84c4589159f46ee8f458: 21300000
     - 1ff1affb4e856f445a7941bf95f5e549: 21300000
@@ -61,6 +62,7 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 32fe2b500f0c01646b6ca11e7892f649, type: 3}
   - {fileID: 21300000, guid: 66331ae0a0dfe6740970b561a2456843, type: 3}
+  - {fileID: 21300000, guid: c8da7ca2516b1bd4fb76478600ef7a6c, type: 3}
   - {fileID: 21300000, guid: 5adbf4047b9c3fc4f8651eebe8d38a37, type: 3}
   - {fileID: 21300000, guid: 1a4ce1552a1f84c4589159f46ee8f458, type: 3}
   - {fileID: 21300000, guid: 1ff1affb4e856f445a7941bf95f5e549, type: 3}
@@ -69,6 +71,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Btn_MainButton_YellowLobby
   - Popup_Frame03
+  - Loading_Dot
   - Popup_Frame03_Title01
   - Btn_MainButton_gray
   - Btn_MainButton_Brown

@@ -642,6 +642,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: PositiveButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5015127561969466574}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopupOneButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517056319983950345, guid: f0749dec6ef283745832403abbb0a5cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

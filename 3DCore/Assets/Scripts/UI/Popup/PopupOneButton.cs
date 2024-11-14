@@ -111,7 +111,6 @@ public class PopupOneButton : UIDialog
 
     public void OnClickButton()
     {
-
         Close();
 
         if (null != _OnCallback) _OnCallback.Invoke();

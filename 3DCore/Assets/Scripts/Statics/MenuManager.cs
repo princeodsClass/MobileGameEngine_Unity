@@ -100,6 +100,8 @@ public class MenuManager : SingletonMono<MenuManager>
 
     public void SceneNext(ESceneType eScene)
     {
+        if (CurScene == eScene) return;
+
         if (!IsLoadingComplete) return;
 
         IsLoadingComplete = false;
