@@ -1,7 +1,7 @@
 public static class ComType
 {
-    // public const string URL = "http://ec2-15-164-210-94.ap-northeast-2.compute.amazonaws.com:29661/";
-    public const string URL = "http://localhost:29661/";
+    public const string URL = "http://ec2-15-164-210-94.ap-northeast-2.compute.amazonaws.com:29661/";
+    // public const string URL = "http://localhost:29661/";
 
     public const string HPRATIO = "fHPRatio";
     public const string RUNVALUE = "isRun";
